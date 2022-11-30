@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Movies</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="bg-success text-white text-center rounded-3 py-3 mb-0">Movies</h1>
+        <form class="mb-5 site-form mt-4" action="#" autocomplete="off" method="get">
+            <div class="row ">
+                <div class="col-3">
+                    <input class="w-100 h-100 px-2 form-input site-input border-0 rounded-3 bg-primary js-input"
+                        type="search" placeholder="Write search move ..." aria-label="Enter your search move">
+                </div>
+                <div class="col-2">
+                    <select class="w-100 h-100 text-center site-select bg-primary text-white border-0 rounded-2"
+                        name="user_select">
+                        <option value="All">All</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <input class="w-100 h-100 px-2 form-search-start site-input border-0 rounded-3 bg-primary py-2"
+                        type="number" placeholder="Write search start num ..."
+                        aria-label="Enter your search start number">
+                </div>
+
+                <div class="col-2">
+                    <input class="w-100 h-100 px-2 form-search-end site-input border-0 rounded-3 bg-primary"
+                        type="number" placeholder="Write search end num ..." aria-label="Enter your search end number">
+                </div>
+                <div class="col-2">
+                    <select class="w-100 h-100 text-center site-select-sort bg-primary text-white border-0 rounded-2"
+                        name="user_select_sort">
+                        <option>All</option>
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                        <option value="1-10">1-10</option>
+                        <option value="10-1">10-1</option>
+                        <option value="2000-2018">2000-2018</option>
+                        <option value="2018-2000">2018-2000</option>
+                    </select>
+                </div>
+                <div class="col-1">
+                    <button class="w-100 h-100 btn btn-primary rounded-2" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+        <div class="row movies-list list-unstyled">
+            <img src="./images/loader.svg" width="100" height="100" alt="Loading">
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <div class="modal-body row">
+                    <div class="col-5">
+                        <h2 class="modal-title"></h2>
+                        <iframe class="modal-iframe" width="447" height="251" src=""
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="col-7 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between my-2">
+                                <span class="modal-rating rating-icon d-inline-flex align-items-center"></span>
+                                <span class="modal-year year-icon d-inline-flex align-items-center"></span>
+                                <time class="modal-runtime time-icon d-inline-flex align-items-center"></time>
+                            </div>
+                            <div class="modal-categories mb-2">
+                            </div>
+                            <p class="modal-summary"></p>
+                        </div>
+                        <a class="modal-imdb-link" href="" target="blank">Show on other information</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <template class="movies-temp">
+        <div class="js-item mb-3 col-12 col-sm-6 col-md-4 col-lg-3 text d-flex align-items-stretch">
+            <div class="d-flex flex-column justify-content-between w-100 p-3 bg-success rounded-3 ">
+                <img class="movies-img mx-auto img-fluid" src="https://via.placeholder.com/150" alt="">
+                <h4 class="movies-title text-center text-white mb-3"></h4>
+                <div class="d-flex justify-content-between my-2">
+                    <span class="movies-rating text-white rating-icon d-inline-flex align-items-center">2122</span>
+                    <span class="movies-year text-white year-icon d-inline-flex align-items-center">2010</span>
+                    <time class="movies-runtime text-white time-icon d-inline-flex align-items-center">200</time>
+                </div>
+                <div class="movies-categories mb-2 text-white">
+                </div>
+                <div>
+                    <button class="movies-btn btn btn-primary" type="button" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">More info</button>
+                    <button class="save-btn btn btn-primary" type="button">Bookmark</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <script src="./js/films.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
